@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+files:
+  - source: web.zip
+    destination: .
+file_exists_behavior: OVERWRITE
+hooks:
+  BeforeInstall:
+    - location: scripts/limpiar.sh
+      timeout: 20
+      runas: root
+  AfterInstall:
+    - location: scripts/cargar.sh
+      timeout: 180
+      runas: root
+  ApplicationStart:
+    - location: scripts/iniciar-servicio.sh
+      timeout: 60
+      runas: root
