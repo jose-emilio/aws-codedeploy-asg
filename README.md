@@ -8,7 +8,7 @@
 
 2. Crear un bucket de S3 para el servicio de AWS CloudFormation:
 
-		$ aws s3 mb s3://<bucket-cf> --region
+		$ aws s3 mb s3://<bucket-cf> --region $REGION
 
 3. Empaquetar la plantilla de AWS CloudFormation del archivo codedeploy.yaml:
 
