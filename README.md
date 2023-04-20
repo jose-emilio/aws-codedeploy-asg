@@ -1,6 +1,7 @@
 ## Despliegue de aplicaciones con AWS CodeDeploy y Amazon EC2 Auto Scaling
 **Despliegue de aplicaciones mediante AWS CodeDeploy sobre un grupo de Auto Escalado de Amazon EC2**
 
+![Arquitectura](images/arch.png)
 
 1. Establecer la región donde se desplegará la infraestructura:
 
