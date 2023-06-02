@@ -21,7 +21,7 @@ Resources:
         SubredPrivada2: 192.168.1.0/24
         NATGateways: 'SI'
         Bastion: 'NO'
-      TemplateURL: ./vpc.yaml
+      TemplateURL: ./vpc/vpc.yaml
 
   Bucket:
     Type: AWS::S3::Bucket
