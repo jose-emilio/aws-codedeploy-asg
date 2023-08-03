@@ -4,7 +4,7 @@ Parameters:
   AmiID:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
     Description: ID de la AMI
-    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-arm64-gp2'
 
 Resources:
   miVPC:
@@ -15,12 +15,9 @@ Resources:
         VPC: 192.168.0.0/20
         SubredesPublicas: 'SI'
         SubredesPrivadas: SI
-        SubredPublica1: 192.168.2.0/24
-        SubredPublica2: 192.168.3.0/24
-        SubredPrivada1: 192.168.0.0/24
-        SubredPrivada2: 192.168.1.0/24
         NATGateways: 'SI'
         Bastion: 'NO'
+        LearnerLab: 'NO'
       TemplateURL: ./vpc/vpc.yaml
 
   Bucket:
@@ -99,7 +96,7 @@ Resources:
     Properties:
       LaunchTemplateData:
         ImageId: !Ref AmiID
-        InstanceType: t3.small
+        InstanceType: t4g.small
         SecurityGroupIds:
           - !GetAtt GrupoSeguridadEC2.GroupId
         IamInstanceProfile: 
