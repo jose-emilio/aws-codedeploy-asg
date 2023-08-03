@@ -22,6 +22,7 @@ Resources:
 
   Bucket:
     Type: AWS::S3::Bucket
+    DeletionPolicy: RetainExceptOnCreate
     Properties:
       AccessControl: Private 
       PublicAccessBlockConfiguration:
